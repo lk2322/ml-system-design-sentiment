@@ -9,35 +9,35 @@
 ```mermaid
 graph TB
     subgraph Frontend["Слой представления"]
-        WebUI[Web Client]
-        ModDash[Moderator Dashboard]
-        AnDash[Analytics Dashboard]
+        WebUI["Web Client"]
+        ModDash["Moderator Dashboard"]
+        AnDash["Analytics Dashboard"]
     end
 
     subgraph Gateway["API-шлюз"]
-        APIGW[API Gateway]
+        APIGW["API Gateway"]
     end
 
     subgraph Backend["Бэкенд-сервисы"]
-        CS[Comment Service<br/>––––––––<br/>+ createComment()<br/>+ getComments()<br/>+ deleteComment()]
-        PS[Post Service<br/>––––––––<br/>+ getPost()<br/>+ listPosts()]
-        MS[Moderation Service<br/>––––––––<br/>+ reviewAction()<br/>+ getQueue()<br/>+ overrideDecision()]
-        US[User Service<br/>––––––––<br/>+ getUser()<br/>+ updateTrustScore()]
-        AS[Analytics Service<br/>––––––––<br/>+ getSentimentTrends()<br/>+ getModerationStats()]
+        CS["Comment Service"]
+        PS["Post Service"]
+        MS["Moderation Service"]
+        US["User Service"]
+        AS["Analytics Service"]
     end
 
     subgraph MLCore["ML-ядро"]
-        IS[Inference Service<br/>––––––––<br/>+ predictSentiment()<br/>+ predictToxicity()<br/>+ healthCheck()]
-        RP[Retraining Pipeline<br/>––––––––<br/>+ collectFeedback()<br/>+ trainModel()<br/>+ deployModel()]
-        PP[Preprocessing Module<br/>––––––––<br/>+ normalizeText()<br/>+ tokenize()<br/>+ generateEmbedding()]
+        IS["Inference Service"]
+        RP["Retraining Pipeline"]
+        PP["Preprocessing Module"]
     end
 
     subgraph Infrastructure["Инфраструктура"]
-        MQ[Message Queue<br/>Kafka]
-        PG[(PostgreSQL)]
-        CH[(ClickHouse)]
-        S3[(S3 Storage)]
-        RD[(Redis)]
+        MQ["Message Queue — Kafka"]
+        PG[("PostgreSQL")]
+        CH[("ClickHouse")]
+        S3[("S3 Storage")]
+        RD[("Redis")]
     end
 
     WebUI --> APIGW
@@ -77,6 +77,19 @@ graph TB
     style MLCore fill:#f3e5f5
     style Infrastructure fill:#fce4ec
 ```
+
+**Методы компонентов:**
+
+| Компонент | Методы |
+|---|---|
+| Comment Service | `createComment()`, `getComments()`, `deleteComment()` |
+| Post Service | `getPost()`, `listPosts()` |
+| Moderation Service | `reviewAction()`, `getQueue()`, `overrideDecision()` |
+| User Service | `getUser()`, `updateTrustScore()` |
+| Analytics Service | `getSentimentTrends()`, `getModerationStats()` |
+| Inference Service | `predictSentiment()`, `predictToxicity()`, `healthCheck()` |
+| Retraining Pipeline | `collectFeedback()`, `trainModel()`, `deployModel()` |
+| Preprocessing Module | `normalizeText()`, `tokenize()`, `generateEmbedding()` |
 
 ## UML-диаграмма классов (ключевые сущности ML-ядра)
 
