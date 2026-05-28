@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+    </marker>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#020617" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Title -->
+  <text x="30" y="40" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="bold">Behavioral Activity & Stream Processing Sequence Chart</text>
+  <text x="30" y="60" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Chronological workflows and state progression paths</text>
+
+  <rect x="40" y="80" width="400" height="560" rx="8" fill="rgba(15, 23, 42, 0.1)" stroke="#fbbf24" stroke-width="1.5" />
+  <text x="50" y="102" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="start">UML ACTIVITY DIAGRAM</text>
+  <circle cx="240" cy="130" r="10" fill="#22c55e" />
+
+  <rect x="160" y="160" width="160" height="45" rx="6" fill="#0f172a" />
+  <rect x="160" y="160" width="160" height="45" rx="6" fill="rgba(8, 51, 68, 0.3)" stroke="#22d3ee" stroke-width="1.5" />
+  <text x="240.0" y="182" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">Comment posted</text>
+  <text x="240.0" y="196" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Async HTTP Influx</text>
+
+  <line x1="240" y1="140" x2="240" y2="155" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <rect x="150" y="240" width="180" height="50" rx="6" fill="#0f172a" />
+  <rect x="150" y="240" width="180" height="50" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5" />
+  <text x="240.0" y="262" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">Compute Sentiment/Tox</text>
+  <text x="240.0" y="276" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Inference Worker</text>
+
+  <line x1="240" y1="205" x2="240" y2="235" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <polygon points="240 320, 260 335, 240 350, 220 335" fill="none" stroke="#fbbf24" stroke-width="1.5" />
+  <text x="240" y="315" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Conf &gt; 0.85?</text>
+
+  <line x1="240" y1="290" x2="240" y2="320" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <rect x="70" y="400" width="150" height="50" rx="6" fill="#0f172a" />
+  <rect x="70" y="400" width="150" height="50" rx="6" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1.5" />
+  <text x="145.0" y="422" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">Apply Auto-Hide</text>
+  <text x="145.0" y="436" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">High confident Toxic</text>
+
+  <line x1="220" y1="335" x2="145" y2="335" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <line x1="145" y1="335" x2="145" y2="395" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="145.0" y="361.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">YES</text>
+
+  <rect x="260" y="400" width="155" height="50" rx="6" fill="#0f172a" />
+  <rect x="260" y="400" width="155" height="50" rx="6" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" />
+  <text x="337.5" y="422" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">Escalate User Queue</text>
+  <text x="337.5" y="436" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Low sentiment confidence</text>
+
+  <line x1="260" y1="335" x2="330" y2="335" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <line x1="330" y1="335" x2="330" y2="395" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="330.0" y="361.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">NO</text>
+  <rect x="80" y="480" width="320" height="6" rx="3" fill="#64748b" />
+
+  <line x1="145" y1="450" x2="145" y2="478" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <line x1="330" y1="450" x2="330" y2="478" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <rect x="160" y="510" width="160" height="45" rx="6" fill="#0f172a" />
+  <rect x="160" y="510" width="160" height="45" rx="6" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5" />
+  <text x="240.0" y="532" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">Write Analytics Log</text>
+  <text x="240.0" y="546" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Log to ClickHouse</text>
+
+  <line x1="240" y1="486" x2="240" y2="505" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <circle cx="240" cy="595" r="12" fill="none" stroke="#ef4444" stroke-width="2" />
+  <circle cx="240" cy="595" r="6" fill="#ef4444" />
+
+  <line x1="240" y1="555" x2="240" y2="580" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <rect x="470" y="80" width="490" height="560" rx="8" fill="rgba(15, 23, 42, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
+  <text x="480" y="102" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="start">UML SEQUENCE DIAGRAM</text>
+  <text x="510" y="130" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold" text-anchor="start">User</text>
+<line x1="530" y1="140" x2="530" y2="600" stroke="#475569" stroke-width="1" stroke-dasharray="4,4" />
+  <text x="610" y="130" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold" text-anchor="start">API Gateway</text>
+<line x1="650" y1="140" x2="650" y2="600" stroke="#475569" stroke-width="1" stroke-dasharray="4,4" />
+  <text x="710" y="130" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold" text-anchor="start">Kafka Queue</text>
+<line x1="750" y1="140" x2="750" y2="600" stroke="#475569" stroke-width="1" stroke-dasharray="4,4" />
+  <text x="810" y="130" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold" text-anchor="start">ML Worker</text>
+<line x1="850" y1="140" x2="850" y2="600" stroke="#475569" stroke-width="1" stroke-dasharray="4,4" />
+  <text x="910" y="130" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold" text-anchor="start">ClickHouse</text>
+<line x1="940" y1="140" x2="940" y2="600" stroke="#475569" stroke-width="1" stroke-dasharray="4,4" />
+
+  <line x1="530" y1="175" x2="646" y2="175" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="588.0" y="171.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">POST comment</text>
+
+  <line x1="650" y1="205" x2="746" y2="205" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="698.0" y="201.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">enqueue comment</text>
+
+  <line x1="650" y1="235" x2="534" y2="235" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="592.0" y="231.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">202 Accepted</text>
+
+  <line x1="750" y1="280" x2="846" y2="280" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="798.0" y="276.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">comment event</text>
+  <path d="M 850 310 L 880 310 L 880 340 L 853 340" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="885" y="328" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="start">Run RuBERT</text>
+
+  <line x1="850" y1="390" x2="936" y2="390" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="893.0" y="386.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">INSERT log</text>
+
+  <line x1="850" y1="440" x2="654" y2="440" stroke="#fb7185" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="752.0" y="436.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">hide comment request</text>
+
+  <rect x="490" y="475" width="455" height="110" rx="4" fill="rgba(244, 63, 94, 0.05)" stroke="#fb7185" stroke-width="1" stroke-dasharray="2,2" />
+  <text x="500" y="492" fill="#fb7185" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="bold" text-anchor="start">alt: low confidence</text>
+
+  <line x1="850" y1="520" x2="654" y2="520" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="752.0" y="516.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">enqueue human moderate</text>
+
+  <line x1="650" y1="555" x2="534" y2="555" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="592.0" y="551.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">render placeholder</text>
+
+</svg>

@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+    </marker>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#020617" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Title -->
+  <text x="30" y="40" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="bold">Distributed Storage & Real-Time Processing Architecture Map</text>
+  <text x="30" y="60" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Showing separate read/write paths, messaging clusters and target layers</text>
+
+  <rect x="50" y="80" width="900" height="570" rx="12" fill="rgba(15, 23, 42, 0.1)" stroke="#475569" stroke-width="1.5" stroke-dasharray="8,4" />
+  <text x="65" y="100" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="start">COGNITIVE MODERATION PLATFORM CONTEXT (K8s CLUSTER)</text>
+
+  <rect x="80" y="140" width="160" height="80" rx="6" fill="#0f172a" />
+  <rect x="80" y="140" width="160" height="80" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5" />
+  <text x="160.0" y="162" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">API Gateway / Ingest</text>
+  <text x="160.0" y="176" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Uvicorn FastAPIs</text>
+  <text x="92" y="188" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Handle webhook spikes</text>
+  <text x="92" y="200" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Client auth & validation</text>
+  <text x="92" y="212" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• High throughput HTTP</text>
+
+  <rect x="80" y="310" width="160" height="75" rx="6" fill="#0f172a" />
+  <rect x="80" y="310" width="160" height="75" rx="6" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185" stroke-width="1.5" />
+  <text x="160.0" y="332" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">Redis Broker/Cache</text>
+  <text x="160.0" y="346" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">In-Memory Storage</text>
+  <text x="92" y="358" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Deduplication locks</text>
+  <text x="92" y="370" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Rate-limiting counts</text>
+  <text x="92" y="382" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Pub/Sub state cache</text>
+
+  <line x1="160" y1="220" x2="160" y2="305" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="160.0" y="258.5" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Cache lookup</text>
+
+  <rect x="320" y="140" width="180" height="90" rx="6" fill="#0f172a" />
+  <rect x="320" y="140" width="180" height="90" rx="6" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" />
+  <text x="410.0" y="162" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">Kafka Cluster</text>
+  <text x="410.0" y="176" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Streaming Event Bus</text>
+  <text x="332" y="188" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Topic: raw_comments (3 shards)</text>
+  <text x="332" y="200" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Topic: verified_predictions</text>
+  <text x="332" y="212" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Partitioned by user_id</text>
+  <text x="332" y="224" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Persistent repl factor: 3</text>
+
+  <line x1="240" y1="180" x2="315" y2="180" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="277.5" y="176.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Publish JSON</text>
+
+  <rect x="580" y="140" width="190" height="95" rx="6" fill="#0f172a" />
+  <rect x="580" y="140" width="190" height="95" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5" />
+  <text x="675.0" y="162" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">ML Worker Pipeline</text>
+  <text x="675.0" y="176" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">RuBERT Inference</text>
+  <text x="592" y="188" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Pull raw_comments</text>
+  <text x="592" y="200" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Batch size 32</text>
+  <text x="592" y="212" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Triton GPU Server client</text>
+  <text x="592" y="224" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Auto-scalaing by K8s HPA</text>
+
+  <line x1="500" y1="180" x2="575" y2="180" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="537.5" y="176.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Consume Task</text>
+
+  <rect x="320" y="340" width="180" height="100" rx="6" fill="#0f172a" />
+  <rect x="320" y="340" width="180" height="100" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5" />
+  <text x="410.0" y="362" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">Sharded PostgreSQL</text>
+  <text x="410.0" y="376" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Transactional DB</text>
+  <text x="332" y="388" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Node A: users A-M</text>
+  <text x="332" y="400" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Node B: users N-Z</text>
+  <text x="332" y="412" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Primary OLTP engine</text>
+  <text x="332" y="424" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• ACID Compliant record</text>
+
+  <line x1="160" y1="385" x2="315" y2="385" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="237.5" y="381.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Write/Read User Meta</text>
+
+  <line x1="410" y1="230" x2="410" y2="335" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="410.0" y="278.5" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Sync/Ack</text>
+
+  <rect x="580" y="340" width="190" height="100" rx="6" fill="#0f172a" />
+  <rect x="580" y="340" width="190" height="100" rx="6" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5" />
+  <text x="675.0" y="362" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">ClickHouse Analytics</text>
+  <text x="675.0" y="376" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Columnar OLAP Engine</text>
+  <text x="592" y="388" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• MergeTree engine tables</text>
+  <text x="592" y="400" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Low latency aggregates</text>
+  <text x="592" y="412" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• High speed log query</text>
+  <text x="592" y="424" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Read-only dashboards</text>
+
+  <line x1="675" y1="235" x2="675" y2="335" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="675.0" y="281.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Stream predictions</text>
+
+  <rect x="800" y="340" width="140" height="100" rx="6" fill="#0f172a" />
+  <rect x="800" y="340" width="140" height="100" rx="6" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" />
+  <text x="870.0" y="362" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">Elasticsearch</text>
+  <text x="870.0" y="376" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Context Search</text>
+  <text x="812" y="388" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Full-text indexes</text>
+  <text x="812" y="400" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Fuzzy search</text>
+  <text x="812" y="412" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Audit queues</text>
+
+  <line x1="770" y1="195" x2="870" y2="195" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <line x1="870" y1="195" x2="870" y2="335" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="870.0" y="261.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Index toxic texts</text>
+
+  <rect x="320" y="520" width="450" height="80" rx="6" fill="#0f172a" />
+  <rect x="320" y="520" width="450" height="80" rx="6" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="545.0" y="542" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">Compliance Audit Portal & Active Learning ETL</text>
+  <text x="545.0" y="556" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Next.js / Celery backend on Python 3.11</text>
+  <text x="332" y="568" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Manual mod queue from low confidence results</text>
+  <text x="332" y="580" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• ClickHouse logs querying for RKN compliance SLA auditing</text>
+  <text x="332" y="592" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Relabeling feedback pipeline to trigger retraining (MLflow registry updates)</text>
+
+  <line x1="410" y1="440" x2="410" y2="515" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="410.0" y="473.5" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Fetch tasks/Save changes</text>
+
+  <line x1="675" y1="440" x2="675" y2="515" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="675.0" y="473.5" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Query metrics</text>
+
+</svg>

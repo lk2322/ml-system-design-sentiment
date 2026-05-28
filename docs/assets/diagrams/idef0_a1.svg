@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+    </marker>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#020617" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Title -->
+  <text x="30" y="40" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="bold">IDEF0 A1: ML-Powered Content Moderation Functional Decomposition</text>
+  <text x="30" y="60" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Inputs (L), Controls (T), Mechanisms (B), Outputs (R)</text>
+  <text x="500" y="30" fill="#f43f5e" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">CONTROLS: RKN Rules, Internal SLA (<200ms), FZ-152, CPU/GPU Budget</text>
+  <text x="500" y="650" fill="#a855f7" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">MECHANISMS: RuBERT (DeepPavlov), Triton Inference Server, Human Moderators, K8s Auto-scalers</text>
+
+  <rect x="100" y="140" width="150" height="80" rx="6" fill="#0f172a" />
+  <rect x="100" y="140" width="150" height="80" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5" />
+  <text x="175.0" y="162" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">A1.1</text>
+  <text x="175.0" y="176" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Ingest Comment Stream</text>
+  <text x="112" y="188" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Read 500k/day posts</text>
+  <text x="112" y="200" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Tokenize & validate</text>
+  <text x="112" y="212" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Push to Kafka topic</text>
+
+  <rect x="330" y="260" width="170" height="90" rx="6" fill="#0f172a" />
+  <rect x="330" y="260" width="170" height="90" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5" />
+  <text x="415.0" y="282" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">A1.2</text>
+  <text x="415.0" y="296" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Classify Comment ML</text>
+  <text x="342" y="308" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Fine-tuned RuBERT</text>
+  <text x="342" y="320" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Predict Sentiment & Tox</text>
+  <text x="342" y="332" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Confidence scoring</text>
+  <text x="342" y="344" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Triton Server GPU</text>
+
+  <rect x="580" y="380" width="170" height="80" rx="6" fill="#0f172a" />
+  <rect x="580" y="380" width="170" height="80" rx="6" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" />
+  <text x="665.0" y="402" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">A1.3</text>
+  <text x="665.0" y="416" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Queue & Route</text>
+  <text x="592" y="428" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• High conf: auto-action</text>
+  <text x="592" y="440" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Low conf: to humans</text>
+  <text x="592" y="452" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Redis cache metadata</text>
+
+  <rect x="800" y="500" width="170" height="80" rx="6" fill="#0f172a" />
+  <rect x="800" y="500" width="170" height="80" rx="6" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5" />
+  <text x="885.0" y="522" fill="#f1f5f9" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">A1.4</text>
+  <text x="885.0" y="536" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">Action, Log & Retrain</text>
+  <text x="812" y="548" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Hide/ban on platforms</text>
+  <text x="812" y="560" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Analytics in ClickHouse</text>
+  <text x="812" y="572" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="8">• Active learning data</text>
+
+  <line x1="20" y1="180" x2="95" y2="180" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="57.5" y="176.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Raw Comments Stream</text>
+
+  <line x1="250" y1="180" x2="330" y2="305" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="290.0" y="238.5" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Validated Comments</text>
+
+  <line x1="175" y1="220" x2="175" y2="420" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="175.0" y="316.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Metadata Log</text>
+
+  <line x1="175" y1="420" x2="575" y2="420" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <line x1="500" y1="305" x2="575" y2="410" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="537.5" y="353.5" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Inference Output</text>
+
+  <line x1="750" y1="420" x2="795" y2="540" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="772.5" y="476.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Moderation Task</text>
+
+  <line x1="500" y1="290" x2="885" y2="290" stroke="#10b981" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="692.5" y="286.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Auto-Action Signal</text>
+
+  <line x1="885" y1="290" x2="885" y2="495" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <line x1="970" y1="540" x2="1020" y2="540" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="995.0" y="536.0" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Action / Audit Record</text>
+  <text x="920" y="530" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="start">Moderated DB</text>
+
+  <line x1="175" y1="45" x2="175" y2="135" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#arrowhead)" stroke-dasharray="4,4" />
+
+  <line x1="415" y1="45" x2="415" y2="255" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#arrowhead)" stroke-dasharray="4,4" />
+
+  <line x1="665" y1="45" x2="665" y2="375" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#arrowhead)" stroke-dasharray="4,4" />
+
+  <line x1="885" y1="45" x2="885" y2="495" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#arrowhead)" stroke-dasharray="4,4" />
+
+  <line x1="175" y1="635" x2="175" y2="225" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrowhead)" stroke-dasharray="2,2" />
+
+  <line x1="415" y1="635" x2="415" y2="355" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrowhead)" stroke-dasharray="2,2" />
+
+  <line x1="665" y1="635" x2="665" y2="465" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrowhead)" stroke-dasharray="2,2" />
+
+  <line x1="885" y1="635" x2="885" y2="585" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrowhead)" stroke-dasharray="2,2" />
+
+</svg>
