@@ -85,7 +85,5 @@ sequenceDiagram
     FC->>CH: INSERT INTO feedback_signals {type: FALSE_POSITIVE}
     FC->>RP: notify feedback_collected
 
-    Note over RP: Сигнал накапливается; дообучение запускается по расписанию (еженедельно)
-
-    Note over RP: После накопления N сигналов: train, validate, canary_deploy
+    Note right of RP: Сигнал накапливается для дообучения по расписанию, затем train и canary_deploy
 ```
