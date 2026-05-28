@@ -81,11 +81,11 @@ sequenceDiagram
     API->>MS: overrideDecision()
     MS->>PG: UPDATE comments SET is_deleted = false
     MS->>PG: INSERT INTO moderation_actions {followed_ai: false}
-    MS->>FC: collectFeedback(LO Público_POSITIVE)
+    MS->>FC: collectFeedback(FALSE_POSITIVE)
     FC->>CH: INSERT INTO feedback_signals {type: FALSE_POSITIVE}
     FC->>RP: notify feedback_collected
 
-    Note over RP: Сигнал накапливается;<br/>дообучение запускается по расписанию (еженедельно)
+    Note over RP: Сигнал накапливается; дообучение запускается по расписанию (еженедельно)
 
-    RP->>RP: После накопления ≥ N сигналов:<br/>train() → validate() → canary_deploy()
+    Note over RP: После накопления N сигналов: train, validate, canary_deploy
 ```
